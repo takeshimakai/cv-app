@@ -10,7 +10,11 @@ const Form = (props) => {
         handleProfileChange,
         handleExperienceChange,
         handleEducationChange,
-        handleSubmit
+        handleSubmit,
+        addExperience,
+        addEducation,
+        removeExperience,
+        removeEducation
     } = props;
 
     return (
@@ -22,23 +26,33 @@ const Form = (props) => {
             <h3>Work Experience</h3>
             {experienceInput.map((obj) => {
                 return (
-                    <ExperienceInput
-                        key={obj.id}
-                        experienceInput={obj}
-                        handleExperienceChange={handleExperienceChange}
-                    />
+                    <div key={obj.id} className='experience-input'>
+                        <ExperienceInput
+                            experienceInput={obj}
+                            handleExperienceChange={handleExperienceChange}
+                        />
+                        {experienceInput.length > 1 &&
+                            <button type='button' data-id={obj.id} onClick={removeExperience}>Remove Experience</button>
+                        }
+                    </div>
                 )
             })}
+            <button type='button' onClick={addExperience}>Add Experience</button>
             <h3>Education</h3>
             {educationInput.map((obj) => {
                 return (
-                    <EducationInput
-                        key={obj.id}
-                        educationInput={obj}
-                        handleEducationChange={handleEducationChange}
-                    />
+                    <div key={obj.id}>
+                        <EducationInput
+                            educationInput={obj}
+                            handleEducationChange={handleEducationChange}
+                        />
+                        {educationInput.length > 1 &&
+                            <button type='button' data-id={obj.id} onClick={removeEducation}>Remove Education</button>
+                        }
+                    </div>
                 )
             })}
+            <button type='button' onClick={addEducation}>Add Education</button>
             <button type='submit'>Save</button>
         </form>
     )

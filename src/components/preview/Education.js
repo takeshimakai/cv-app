@@ -18,7 +18,6 @@ const Education = (props) => {
 
     return (
         <div className='preview-section' id='education-section'>
-            <h3>Education</h3>
             {renderedInfo}
         </div>
     )

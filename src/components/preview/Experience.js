@@ -21,7 +21,6 @@ const Experience = (props) => {
 
     return (
         <div className='preview-section' id='experience-section'>
-            <h3>Work Experience</h3>
             {renderedInfo}
         </div>
     )

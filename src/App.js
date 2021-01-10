@@ -67,10 +67,45 @@ const App = () => {
     setExperience(experienceInput);
     setEducation(educationInput);
     setEdit(false);
-    console.log(experience);
   }
 
   const handleEditBtnClick = () => setEdit(true);
+
+  const addExperience = () => {
+    setExperienceInput((prevInput) => [
+      ...prevInput,
+      {
+        id: uniqid(),
+        company: '',
+        position: '',
+        startDate: '',
+        endDate: '',
+        description: '',
+      }
+    ])
+  }
+
+  const addEducation = () => {
+    setEducationInput((prevInput) => [
+      ...prevInput,
+      {
+        id: uniqid(),
+        institution: '',
+        discipline: '',
+        graduationYear: '',
+      }
+    ])
+  }
+
+  const removeExperience = (e) => {
+    const { dataset:{id} } = e.target;
+    setExperienceInput((prevInput) => prevInput.filter((obj) => obj.id !== id));
+  }
+
+  const removeEducation = (e) => {
+    const { dataset:{id} } = e.target;
+    setEducationInput((prevInput) => prevInput.filter((obj) => obj.id !== id));
+  }
 
   return (
     <div id='main'>
@@ -83,6 +118,10 @@ const App = () => {
         handleExperienceChange={handleExperienceChange}
         handleEducationChange={handleEducationChange}
         handleSubmit={handleSubmit}
+        addExperience={addExperience}
+        addEducation={addEducation}
+        removeExperience={removeExperience}
+        removeEducation={removeEducation}
         />
         : <Preview
         profile={profile}
