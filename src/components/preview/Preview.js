@@ -6,7 +6,7 @@ const Preview = (props) => {
     const { profile, experience, education, handleEditBtnClick } = props;
 
     return (
-        <div>
+        <div id='preview'>
             <Profile profile={profile} />
             <h3>Work Experience</h3>
             {experience.map((obj) => {

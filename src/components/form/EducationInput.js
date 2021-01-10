@@ -2,8 +2,9 @@ const EducationInput = (props) => {
     const { educationInput, handleEducationChange } = props;
 
     return (
-        <div className='input-section'>
-            <label>Institution name:
+        <div>
+            <div className='input-box'>
+                <label>Institution name:</label>
                 <input
                     data-id={educationInput.id}
                     name='institution'
@@ -11,8 +12,9 @@ const EducationInput = (props) => {
                     value={educationInput['institution']}
                     onChange={handleEducationChange}
                 />
-            </label>
-            <label>Discipline:
+            </div>
+            <div className='input-box'>
+                <label>Discipline:</label>
                 <input
                     data-id={educationInput.id}
                     name='discipline'
@@ -20,8 +22,9 @@ const EducationInput = (props) => {
                     value={educationInput['discipline']}
                     onChange={handleEducationChange}
                 />
-            </label>
-            <label>Graduation year:
+            </div>
+            <div className='input-box'>
+                <label>Graduation year:</label>
                 <input
                     data-id={educationInput.id}
                     name='graduationYear'
@@ -29,7 +32,7 @@ const EducationInput = (props) => {
                     value={educationInput['graduationYear']}
                     onChange={handleEducationChange}
                 />
-            </label>
+            </div>
         </div>
     )
 }

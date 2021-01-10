@@ -2,8 +2,9 @@ const ExperienceInput = (props) => {
     const { experienceInput, handleExperienceChange } = props;
 
     return (
-        <div className='input-section'>
-            <label>Company name:
+        <div>
+            <div className='input-box'>
+                <label>Company name:</label>
                 <input
                     data-id={experienceInput.id}
                     name='company'
@@ -11,17 +12,19 @@ const ExperienceInput = (props) => {
                     value={experienceInput['company']}
                     onChange={handleExperienceChange}
                 />
-            </label>
-            <label>Position:
-                <input
-                    data-id={experienceInput.id}
-                    name='position'
-                    type='text'
-                    value={experienceInput['position']}
-                    onChange={handleExperienceChange}
-                />
-            </label>
-            <label>Start date:
+            </div>
+            <div className='input-box'>
+            <label>Position:</label>
+            <input
+                data-id={experienceInput.id}
+                name='position'
+                type='text'
+                value={experienceInput['position']}
+                onChange={handleExperienceChange}
+            />
+            </div>
+            <div className='input-box'>
+                <label>Start date:</label>
                 <input
                     data-id={experienceInput.id}
                     name='startDate'
@@ -29,8 +32,9 @@ const ExperienceInput = (props) => {
                     value={experienceInput['startDate']}
                     onChange={handleExperienceChange}
                 />
-            </label>
-            <label>End date:
+            </div>
+            <div className='input-box'>
+                <label>End date:</label>
                 <input
                     data-id={experienceInput.id}
                     name='endDate'
@@ -38,15 +42,16 @@ const ExperienceInput = (props) => {
                     value={experienceInput['endDate']}
                     onChange={handleExperienceChange}
                 />
-            </label>
-            <label>Work description:
+            </div>
+            <div className='input-box'>
+                <label>Work description:</label>
                 <textarea
                     data-id={experienceInput.id}
                     name='description'
                     value={experienceInput['description']}
                     onChange={handleExperienceChange}
                 />
-            </label>
+            </div>
         </div>
     )
 }

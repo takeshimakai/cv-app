@@ -50,15 +50,13 @@ const App = () => {
   const handleExperienceChange = (e) => {
     const { dataset:{id}, name, value } = e.target;
     setExperienceInput((prevInput) =>
-      prevInput.map((obj) => obj.id === id ? {...obj, [name]: value} : obj
-    ));
+      prevInput.map((obj) => obj.id === id ? {...obj, [name]: value} : obj));
   };
 
   const handleEducationChange = (e) => {
     const { dataset:{id}, name, value } = e.target;
     setEducationInput((prevInput) =>
-      prevInput.map((obj) => obj.id === id ? {...obj, [name]: value} : obj
-    ));
+      prevInput.map((obj) => obj.id === id ? {...obj, [name]: value} : obj));
   };
 
   const handleSubmit = (e) => {
@@ -111,24 +109,24 @@ const App = () => {
     <div id='main'>
       {edit
         ? <Form
-        profileInput={profileInput}
-        experienceInput={experienceInput}
-        educationInput={educationInput}
-        handleProfileChange={handleProfileChange}
-        handleExperienceChange={handleExperienceChange}
-        handleEducationChange={handleEducationChange}
-        handleSubmit={handleSubmit}
-        addExperience={addExperience}
-        addEducation={addEducation}
-        removeExperience={removeExperience}
-        removeEducation={removeEducation}
-        />
+            profileInput={profileInput}
+            experienceInput={experienceInput}
+            educationInput={educationInput}
+            handleProfileChange={handleProfileChange}
+            handleExperienceChange={handleExperienceChange}
+            handleEducationChange={handleEducationChange}
+            handleSubmit={handleSubmit}
+            addExperience={addExperience}
+            addEducation={addEducation}
+            removeExperience={removeExperience}
+            removeEducation={removeEducation}
+          />
         : <Preview
-        profile={profile}
-        experience={experience}
-        education={education}
-        handleEditBtnClick={handleEditBtnClick}
-        />
+            profile={profile}
+            experience={experience}
+            education={education}
+            handleEditBtnClick={handleEditBtnClick}
+          />
       }
     </div>
   );

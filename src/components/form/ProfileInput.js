@@ -2,54 +2,60 @@ const ProfileInput = (props) => {
     const { profileInput, handleProfileChange } = props;
 
     return (
-        <div className='input-section'>
-            <label>First name:
+        <div>
+            <div className='input-box'>
+                <label>Name:</label>
                 <input
                     name='firstName'
                     type='text'
                     value={profileInput['firstName']}
+                    placeholder='First name'
                     onChange={handleProfileChange}
                 />
-            </label>
-            <label>Last name:
                 <input
                     name='lastName'
                     type='text'
                     value={profileInput['lastName']}
+                    placeholder='Last name'
                     onChange={handleProfileChange}
                 />
-            </label>
-            <label>Phone number:
+            </div>
+            <div className='input-box'>
+                <label>Phone number:</label>
                 <input
                     name='phoneNum'
                     type='tel'
                     value={profileInput['phoneNum']}
                     onChange={handleProfileChange}
                 />
-            </label>
-            <label>Email:
+            </div>
+            <div className='input-box'>
+                <label>Email:</label>
                 <input
                     name='email'
                     type='email'
                     value={profileInput['email']}
                     onChange={handleProfileChange}
                 />
-            </label>
-            <label>Address:
+            </div>
+            <div className='input-box'>
+                <label>Address:</label>
                 <input
+                    id='address-input'
                     name='address'
                     type='text'
                     value={profileInput['address']}
                     onChange={handleProfileChange}
                 />
-            </label>
-            <label>Summary:
+            </div>
+            <div className='input-box'>
+                <label>Summary:</label>
                 <textarea
                     name='summary'
                     value={profileInput['summary']}
                     onChange={handleProfileChange}
                 />
-            </label>
+            </div>
         </div>
     )
 }
