@@ -8,7 +8,7 @@ const Profile = (props) => {
             case (key === 'firstName'):
                 renderedInfo.push(<h2 key={key}>{profile.firstName} {profile.lastName}</h2>);
                 break;
-            case (key === 'phoneNum' || key === 'email' || key === 'address'):
+            case (key === 'phoneNum' || key === 'email' || key === 'address' || key === 'summary'):
                 renderedInfo.push(<p key={key}>{profile[key]}</p>);
                 break;
             default:

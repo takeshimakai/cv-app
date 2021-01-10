@@ -1,44 +1,73 @@
 import { useState } from 'react';
+import uniqid from 'uniqid';
 import Form from './components/form/Form';
 import Preview from './components/preview/Preview';
 
 const App = () => {
-  const [inputValue, setInputValue] = useState({});
-
   const [profile, setProfile] = useState({
     firstName: '',
     lastName: '',
     phoneNum: '',
     email: '',
     address: '',
-    summary: '',
-    company: '',
-    position: '',
-    startDate: '',
-    endDate: '',
-    description: '',
-    institution: '',
-    discipline: '',
-    graduationYear: '',
+    summary: ''
   });
+
+  const [experience, setExperience] = useState([
+    {
+      id: uniqid(),
+      company: '',
+      position: '',
+      startDate: '',
+      endDate: '',
+      description: '',
+    }
+  ]);
+
+  const [education, setEducation] = useState([
+    {
+      id: uniqid(),
+      institution: '',
+      discipline: '',
+      graduationYear: '',
+    },
+  ]);
+
+  const [profileInput, setProfileInput] = useState(profile);
+  const [experienceInput, setExperienceInput] = useState(experience);
+  const [educationInput, setEducationInput] = useState(education);
 
   const [edit, setEdit] = useState(true);
 
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    const prevInputValue = inputValue;
-    prevInputValue[id] = value;
-    setInputValue(prevInputValue);
+  const handleProfileChange = (e) => {
+    const { name, value } = e.target;
+    setProfileInput((prevInput) => ({
+      ...prevInput,
+      [name]: value,
+    }));
+  };
+
+  const handleExperienceChange = (e) => {
+    const { dataset:{id}, name, value } = e.target;
+    setExperienceInput((prevInput) =>
+      prevInput.map((obj) => obj.id === id ? {...obj, [name]: value} : obj
+    ));
+  };
+
+  const handleEducationChange = (e) => {
+    const { dataset:{id}, name, value } = e.target;
+    setEducationInput((prevInput) =>
+      prevInput.map((obj) => obj.id === id ? {...obj, [name]: value} : obj
+    ));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const prevProfile = profile;
-    Object.keys(inputValue).forEach((key) => {
-      prevProfile[key] = inputValue[key];
-    })
-    setProfile(prevProfile);
+    setProfile(profileInput);
+    setExperience(experienceInput);
+    setEducation(educationInput);
     setEdit(false);
+    console.log(experience);
   }
 
   const handleEditBtnClick = () => setEdit(true);
@@ -46,8 +75,21 @@ const App = () => {
   return (
     <div id='main'>
       {edit
-        ? <Form inputValue={inputValue} handleChange={handleChange} handleSubmit={handleSubmit} />
-        : <Preview profile={profile} handleEditBtnClick={handleEditBtnClick} />
+        ? <Form
+        profileInput={profileInput}
+        experienceInput={experienceInput}
+        educationInput={educationInput}
+        handleProfileChange={handleProfileChange}
+        handleExperienceChange={handleExperienceChange}
+        handleEducationChange={handleEducationChange}
+        handleSubmit={handleSubmit}
+        />
+        : <Preview
+        profile={profile}
+        experience={experience}
+        education={education}
+        handleEditBtnClick={handleEditBtnClick}
+        />
       }
     </div>
   );

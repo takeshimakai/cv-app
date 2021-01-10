@@ -1,16 +1,34 @@
 const EducationInput = (props) => {
-    const { inputValue, handleChange } = props;
+    const { educationInput, handleEducationChange } = props;
 
     return (
         <div className='input-section'>
             <label>Institution name:
-                <input id='institution' type='text' value={inputValue['institution']} onChange={handleChange} />
+                <input
+                    data-id={educationInput.id}
+                    name='institution'
+                    type='text'
+                    value={educationInput['institution']}
+                    onChange={handleEducationChange}
+                />
             </label>
             <label>Discipline:
-                <input id='discipline' type='text' value={inputValue['discipline']} onChange={handleChange} />
+                <input
+                    data-id={educationInput.id}
+                    name='discipline'
+                    type='text'
+                    value={educationInput['discipline']}
+                    onChange={handleEducationChange}
+                />
             </label>
             <label>Graduation year:
-                <input id='graduationYear' type='date' value={inputValue['graduationYear']} onChange={handleChange} />
+                <input
+                    data-id={educationInput.id}
+                    name='graduationYear'
+                    type='date'
+                    value={educationInput['graduationYear']}
+                    onChange={handleEducationChange}
+                />
             </label>
         </div>
     )

@@ -1,18 +1,18 @@
 const Experience = (props) => {
-    const { profile } = props;
+    const { experience } = props;
 
     const renderedInfo = [];
 
-    Object.keys(profile).forEach((key) => {
+    Object.keys(experience).forEach((key) => {
         switch (true) {
             case (key === 'company'):
-                renderedInfo.push(<h4 key={key}>{profile.company}</h4>);
+                renderedInfo.push(<h4 key={key}>{experience.company}</h4>);
                 break;
             case (key === 'position' || key === 'description'):
-                renderedInfo.push(<p key={key}>{profile[key]}</p>);
+                renderedInfo.push(<p key={key}>{experience[key]}</p>);
                 break;
             case (key === 'startDate'):
-                renderedInfo.push(<p key={key}>{profile.startDate} - {profile.endDate}</p>);
+                renderedInfo.push(<p key={key}>{experience.startDate} - {experience.endDate}</p>);
                 break;
             default:
                 break;

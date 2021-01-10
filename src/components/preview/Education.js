@@ -1,15 +1,15 @@
 const Education = (props) => {
-    const { profile } = props;
+    const { education } = props;
 
     const renderedInfo = [];
 
-    Object.keys(profile).forEach((key) => {
+    Object.keys(education).forEach((key) => {
         switch (true) {
             case (key === 'institution'):
-                renderedInfo.push(<h4 key={key}>{profile.institution}</h4>);
+                renderedInfo.push(<h4 key={key}>{education.institution}</h4>);
                 break;
             case (key === 'discipline' || key === 'graduationYear'):
-                renderedInfo.push(<p key={key}>{profile[key]}</p>);
+                renderedInfo.push(<p key={key}>{education[key]}</p>);
                 break;
             default:
                 break;

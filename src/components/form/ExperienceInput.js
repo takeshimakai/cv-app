@@ -1,22 +1,51 @@
 const ExperienceInput = (props) => {
-    const { inputValue, handleChange } = props;
+    const { experienceInput, handleExperienceChange } = props;
 
     return (
         <div className='input-section'>
             <label>Company name:
-                <input id='company' type='text' value={inputValue['company']} onChange={handleChange} />
+                <input
+                    data-id={experienceInput.id}
+                    name='company'
+                    type='text'
+                    value={experienceInput['company']}
+                    onChange={handleExperienceChange}
+                />
             </label>
             <label>Position:
-                <input id='position' type='text' value={inputValue['position']} onChange={handleChange} />
+                <input
+                    data-id={experienceInput.id}
+                    name='position'
+                    type='text'
+                    value={experienceInput['position']}
+                    onChange={handleExperienceChange}
+                />
             </label>
             <label>Start date:
-                <input id='startDate' type='date' value={inputValue['startDate']} onChange={handleChange} />
+                <input
+                    data-id={experienceInput.id}
+                    name='startDate'
+                    type='date'
+                    value={experienceInput['startDate']}
+                    onChange={handleExperienceChange}
+                />
             </label>
             <label>End date:
-                <input id='endDate' type='date' value={inputValue['endDate']} onChange={handleChange} />
+                <input
+                    data-id={experienceInput.id}
+                    name='endDate'
+                    type='date'
+                    value={experienceInput['endDate']}
+                    onChange={handleExperienceChange}
+                />
             </label>
             <label>Work description:
-                <textarea id='description' value={inputValue['endDate']} onChange={handleChange} />
+                <textarea
+                    data-id={experienceInput.id}
+                    name='description'
+                    value={experienceInput['description']}
+                    onChange={handleExperienceChange}
+                />
             </label>
         </div>
     )
