@@ -20,7 +20,7 @@ const Experience = (props) => {
     })
 
     return (
-        <div className='preview-section' id='experience-section'>
+        <div className='experience-section'>
             {renderedInfo}
         </div>
     )

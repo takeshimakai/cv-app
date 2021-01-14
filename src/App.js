@@ -106,7 +106,7 @@ const App = () => {
   }
 
   return (
-    <div id='main'>
+    <div>
       {edit
         ? <Form
             profileInput={profileInput}

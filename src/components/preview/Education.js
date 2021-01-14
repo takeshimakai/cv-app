@@ -17,7 +17,7 @@ const Education = (props) => {
     })
 
     return (
-        <div className='preview-section' id='education-section'>
+        <div className='education-section'>
             {renderedInfo}
         </div>
     )

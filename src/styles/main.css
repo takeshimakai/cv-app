@@ -12,19 +12,38 @@ body {
     font-size: 15px;
 }
 
+.outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .separation {
     border-top: #efefef 1px solid;
 }
 
-#main {
+.main {
     width: 80vw;
     min-width: 500px;
     border: #efefef 1px solid;
     padding: 30px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-    margin: 50px;
+    margin: 25px 0 50px;
 }
 
+button {
+    width: 150px;
+    height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Form */
 .input-section {
     margin: 30px 0;
 }
@@ -61,17 +80,51 @@ textarea {
     width: 405px;
 }
 
-button {
-    width: 150px;
-    height: 30px;
-    color: teal;
-    border: solid 2px teal;
-    border-radius: 4px;
+.add-btn {
+    border: solid 2px darkslategray;
     background-color: transparent;
-    cursor: pointer;
-    font-weight: 600;
+    color: darkslategray;
 }
 
-button:focus {
-    outline: none;
+.remove-btn {
+    border: none;
+    background-color: darkslategray;
+    color: white;
+}
+
+#save-btn {
+    background-color: transparent;
+    border: solid 2px seagreen;
+    color: seagreen;
+    margin-top: 25px;
+}
+
+/* Preview */
+.preview-section {
+    margin: 30px 0;
+}
+
+.experience-section, .education-section {
+    margin: 10px 0;
+}
+
+#profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#name-preview {
+    margin-bottom: 10px;
+}
+
+#summary-preview {
+    margin-top: 10px;
+}
+
+#edit-btn {
+    background-color: transparent;
+    border: solid 2px orangered;
+    color: orangered;
+    margin-top: 25px;
 }
